@@ -1082,7 +1082,7 @@
         throw new Error("NO_API_KEY");
       }
 
-      const url = const mList = await (await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${activeKey}`)).json();
+      const mList = await (await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${activeKey}`)).json();
 const mObj = (mList.models || []).find(m => (m.supportedGenerationMethods || []).includes('generateContent') && /^models\/gemini-3(\.0)?-flash(-preview|-001)?$/.test(m.name)) || (mList.models || []).find(m => (m.supportedGenerationMethods || []).includes('generateContent') && m.name.includes('gemini-3') && m.name.includes('flash') && !/image|tts|audio|live|thinking/.test(m.name));
 const url = `https://generativelanguage.googleapis.com/v1beta/${mObj ? mObj.name : 'models/gemini-flash-latest'}:generateContent?key=${activeKey}`;
       const parts = [
