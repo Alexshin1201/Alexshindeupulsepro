@@ -1082,7 +1082,7 @@
         throw new Error("NO_API_KEY");
       }
 
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.0-flash:generateContent?key${activeKey}`;
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key${activeKey}`;
 
       const parts = [
         { inline_data: { mime_type: "application/pdf", data: pdfBase64 } },
